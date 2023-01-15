@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+
+
+:root {
+  --background-color: hsl(30, 38%, 92%);
+  --button-color: hsl(158, 36%, 37%);
+  --text-color: hsl(212, 21%, 14%);
+  --paragraph-color: hsl(228, 12%, 48%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+}
+.container {
+  margin: 30px auto;
+  padding: 0 30px;
+}
+.cards {
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.img img {
+  max-width: 100%;
+  display: inherit;
+}
+.card-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+}
+.card-details h6 {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--paragraph-color);
+}
+.card-details h1 {
+  font-family: "Fraunces", serif;
+  color: var(--text-color);
+  font-size: 34px;
+  line-height: 1em;
+}
+.card-details p {
+  line-height: 1.4em;
+  color: var(--paragraph-color);
+}
+.price {
+  display: flex;
+  align-items: center;
+}
+.price .current-price {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--button-color);
+  padding-right: 25px;
+}
+.old-price {
+  color: var(--paragraph-color);
+  text-decoration: line-through;
+}
+.btn {
+  width: 100%;
+  padding: 14px 0;
+  background-color: var(--button-color);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.btn:hover {
+  background-color: hsl(158, 36%, 25%);
+}
+.btn img {
+  padding-right: 7px;
+}
+
+@media (max-width: 628px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .img img {
+    max-height: 400px;
+    width: 100%;
+    object-fit: cover;
+  }
+  .card-details {
+    display: block;
+  }
+  h6,
+  h1,
+  p {
+    padding-bottom: 23px;
+  }
+  .price {
+    padding-bottom: 23px;
+  }
+}
+@media (max-width: 375px) {
+  .container {
+    margin: 13px auto;
+    padding: 0 13px;
+  }
+  .img img {
+    max-height: 290px;
+  }
+  h6,
+  h1,
+  p {
+    padding-bottom: 13px;
+  }
+  .price {
+    padding-bottom: 13px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 12px;
+  }
+  .current-price {
+    font-size: 23px;
+  }
+  .btn {
+    font-size: 14px;
+    padding: 12px 0;
+  }
+}
